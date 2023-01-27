@@ -1,4 +1,5 @@
 import random 
+import os
 from termcolor import colored, cprint 
 
 def welcome():
@@ -9,13 +10,13 @@ def welcome():
         
 def start():
   
-  rdm = random.randrange(1,10)
+  rdm = random.randrange(1,2)
   guest = int(input('Enter any number between 1 & 10: '))
   tryAgain = colored('\nTRY  AGAIN ==> ', 'red')
   i = 0
      
   chance = 5
-  while guest != rdm:
+  while True:
     i += 1
     chance -= 1
     if i >= 5:
@@ -40,17 +41,17 @@ def start():
       |___________________|'''.format(colored('STATUS', 'green'),colored('CHANCE LEFT', 'green'),chance))
       guest = int(input(tryAgain))
       
-    else:
-      break 
-    print(colored('\nBravo you win!!!','green'))
-    newGame()
+    elif guest == rdm:
+      print(colored('\nBravo, You win!!!','green'))
+      newGame()
+    
 def newGame():
-  startNewGame = input('Would you like to start again? (Y/N) ')
+  startNewGame = input('Would you like to play again? (Y/N) ')
   if startNewGame == 'Y':
     start()
   else: 
     print('See you again!')
-    quit()
-  
+    os._exit(1) 
+    
 welcome()
 start()
