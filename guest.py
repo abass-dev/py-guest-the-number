@@ -1,6 +1,6 @@
 import random 
 import os
-from termcolor import colored, cprint 
+from termcolor import colored
 
 def welcome():
     print('''\n
