@@ -9,7 +9,7 @@ def welcome():
         
 def start():
   
-  rdm = random.randrange(1,2)
+  rdm = random.randrange(1,10)
   guest = int(input('Enter any number between 1 & 10: '))
   tryAgain = colored('\nTRY  AGAIN ==> ', 'red')
   i = 0
